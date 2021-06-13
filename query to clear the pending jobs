@@ -1,0 +1,16 @@
+select * from vm_work_job where vm_instance_id=22599; 
+
+select * from sync_queue where sync_objid=22599 \G; 
+
+select * from sync_queue_item where queue_id=39021 \G; 
+
+
+delete from vm_work_job where vm_instance_id=22599; 
+
+delete from sync_queue_item where queue_id=39021; 
+
+update sync_queue set queue_size=0 where id=3
+
+
+select * from op_it_work where instance_id=488 and step!='done'; 
+select * from op_ha_work where instance_id=488 and step!='done'; 
